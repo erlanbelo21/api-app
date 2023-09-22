@@ -1,0 +1,31 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Gallo Boy",
+      "email": "galo@boy.com",
+      "senha": "123456"
+    },
+    {
+      "id": 2,
+      "nome": "Neymar",
+      "email": "neymar@alhilal.com",
+      "senha": "alhilal123"
+    },
+    {
+      "nome": "",
+      "email": "senhsd",
+      "senha": "10111011",
+      "id": 3
+    }
+  ],
+  "produtos": [
+    {
+      "id": 1,
+      "nome": "Café",
+      "descricao": "Café tipo arábica",
+      "validade": "2024-12-31",
+      "preco": 16.59
+    }
+  ]
+}

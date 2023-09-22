@@ -1,0 +1,27 @@
+-- ir para apasta ionic c: (a barra \ significa c:)
+cd \ionic
+
+--- se a pasta não existir:
+cd\ 
+mkdir ioniccd \ionic
+cd \ionic
+
+
+-------------------------------------------
+
+-- criar um projeto com node 
+- mkdir <nome da pasta, sem espaço>
+mkdir back-end // cria a pasta com nome back-end
+cd back-end // entra na pastaque criamos
+npm init -y // inicia um projeto com NodeJS
+
+-- Instalar o JSON-SERVER
+npm i json-server
+
+-- Criar um arquivo <nome>.json para ser o banco de dados
+-- Escrever a estrutura JSON do banco de dados 
+
+-- Adicionar no arquivo "package.json" na propriedade "scripts" o comando de start
+"start": "json-server -- watch <nome do arquivo>.json"
+
+-- Rodar o comando "npm start" para iniciar o servidor
