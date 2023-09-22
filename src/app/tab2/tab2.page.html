@@ -1,1 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tab 2
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
 
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-input label="Digite um ID:" [(ngModel)] = "id"></ion-input>
+  </ion-item>
+  <ion-button expand="block" (click)="buscarPorID()">
+    Buscar por ID
+  </ion-button>
+
+  <ion-button expand="block" (click)="buscarProdutos()">
+    Limpar Filtro
+  </ion-button>

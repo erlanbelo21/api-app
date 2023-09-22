@@ -7,7 +7,7 @@ import {Produto } from '../Models/Produto.model';
   templateUrl: 'tab2.page.html',
   styleUrls: ['tab2.page.scss']
 })
-export class Tab1Page implements OnInit{
+export class Tab2Page implements OnInit{
 
   listaProdutos: Produto[] = [];
   Produto?: Produto;
