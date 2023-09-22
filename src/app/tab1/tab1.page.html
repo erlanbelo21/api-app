@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tab 1
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-input label="Digite um ID:" [(ngModel)] = "id"></ion-input>
+  </ion-item>
+  <ion-button expand="block" (click)="buscarPorID()">
+    Buscar por ID
+  </ion-button>
+
+  <ion-button expand="block" (click)="buscarUsuarios()">
+    Limpar Filtro
+  </ion-button>
+
+  <div *ngIf="usuario">
+  <h2 style="color:blue">Resultado da Busca:</h2>
+  <ion-item>
+    <ion-badge slot="start">{{usuario.id}}</ion-badge>
+    <ion-label>
+      <h3>{{usuario.nome}}</h3>
+      <p>{{usuario.email}}</p>
+    </ion-label>
+  </ion-item>
+</div>
+
+
+
+
+<ion-item *ngFor="let user of listaUsuarios">
+  <ion-badge slot="start">{{user.id}}</ion-badge>
+  <ion-label>
+    <h3>{{user.nome}}</h3>
+    <p>{{user.email}}</p>
+  </ion-label>
+</ion-item>
+
+
+<ion-fab slot="fixed" horizontal="end" vertical="bottom">
+  <ion-fab-button routerLink="/cadastro-usuario">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
+</ion-content>
