@@ -1,13 +1,29 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>CadastroProduto</ion-title>
+  <ion-toolbar  color="dark">
+    <ion-title >Cadastro de Produto</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">CadastroProduto</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-item>
+    <ion-label position="stacked">Nome do Produto</ion-label>
+    <ion-input [(ngModel)]="Produto.nome" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Descrição</ion-label>
+    <ion-input [(ngModel)]="Produto.descricao" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Validade</ion-label>
+    <ion-input [(ngModel)]="Produto.validade" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Preço</ion-label>
+    <ion-input [(ngModel)]="Produto.preco" type="number"></ion-input>
+  </ion-item>
+ <ion-button expand="full" (click)="salvarProduto()" color="success">Salvar Produto </ion-button>
+ <ion-button routerLink="/" expand="full" fill="clear" color="dark">VOLTAR</ion-button>
 </ion-content>
