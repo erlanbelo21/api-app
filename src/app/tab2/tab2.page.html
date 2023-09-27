@@ -35,10 +35,10 @@
   <ion-item *ngFor="let user of listaProdutos">
     <ion-badge slot="start">{{user.id}}</ion-badge>
     <ion-label>
-      <h3>{{user.nome}}</h3>
-      <p>{{user.descricao}}</p>
-      <p>{{user.validade}}</p>
-      <p>{{user.preco}}</p>
+      <h3><a>Nome:</a> {{user.nome}}</h3>
+      <p><a>Descrição:</a>{{user.descricao}}</p>
+      <p><a>Validade:</a>{{user.validade}}</p>
+      <p><a>Preço:</a>R${{user.preco}}</p>
     </ion-label>
   </ion-item>
 
