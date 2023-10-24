@@ -1,13 +1,35 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>alterar-usuario</ion-title>
+  <ion-toolbar color="dark">
+    <ion-title>Alterar Usuário</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">alterar-usuario</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div *ngIf="usuario">
+  <ion-item>
+    <ion-input [(ngModel)]="usuario.nome"
+    label="Nome" labelPlacement="floating" placeholder="Digite nome completo"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input [(ngModel)]="usuario.email"
+    label="E-mail" type="email" labelPlacement="floating" placeholder="Digite um e-mail válido"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input [(ngModel)]="novaSenha"
+    label="Senha" type="password" labelPlacement="floating" placeholder="Digite uma senha"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-input [(ngModel)]="confirmarSenha"
+    label="Confirme a Senha" type="password" labelPlacement="floating" placeholder="Repita a senha"></ion-input>
+  </ion-item>
+
+  <ion-button (click)="salvarUsuario()" expand="full" color="success">SALVAR</ion-button>
+
+  </div>
+
+  <ion-button routerLink="/" expand="full" color="success">VOLTAR</ion-button>
+
 </ion-content>

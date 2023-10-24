@@ -1,6 +1,6 @@
-import { Usuario } from './../Models/Usuario.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Usuario } from '../Models/Usuario.model';
 import { EMPTY, Observable, catchError, map } from 'rxjs';
 
 
@@ -47,11 +47,19 @@ export class UsuarioService {
     alert("A operação não pode ser concluida!");
     return EMPTY;
   }
-  salvar(usuario:Usuario){
+
+  salvar(usuario: Usuario): Observable<Usuario> {
     return this.http.post<Usuario>(this.url, usuario).pipe(
       map(retorno => retorno),
       catchError(erro => this.exibirErro(erro))
-    );;
-
+    );
   }
+
+  alterar(usuario: Usuario): Observable<Usuario> {
+    return this.http.put<Usuario>(`${this.url}/${usuario.id}`, usuario).pipe(
+      map(retorno => retorno),
+      catchError(erro => this.exibirErro(erro))
+    );
+  }
+
 }

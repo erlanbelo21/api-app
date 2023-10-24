@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Produto } from '../Models/Produto.model';
 import { ProdutoService } from '../services/produto.service';
-import {Produto } from '../Models/Produto.model';
 
 @Component({
   selector: 'app-tab2',
@@ -10,17 +10,17 @@ import {Produto } from '../Models/Produto.model';
 export class Tab2Page implements OnInit{
 
   listaProdutos: Produto[] = [];
-  Produto?: Produto;
+  produto?: Produto;
   id: number = 0;
 
   /*
     *Para buscar dados da API, depois de criar o serviço temos que instanciar em uma variavel o serviço criado
   */
-  constructor(private userService: ProdutoService) {}
+  constructor(private prodService: ProdutoService) {}
 
   //Criar os métodos que conversam com a API
 
-  buscarprodutos(){
+  buscarProdutos(){
     //Primeiro chamamos o método do serviço
     //Depois adicionamos o subscribe para receber
     // a resposta quando ela chegar
@@ -29,24 +29,24 @@ export class Tab2Page implements OnInit{
     //e enviamos ela para uma função anônima
     // dentro da função vamos adicionar o retorno a variavel
     // local
-    this.userService.getAll().subscribe(retorno =>{
+    this.prodService.getAll().subscribe(retorno =>{
       // "as Produto[]" tentar converter o retorno para este tipo
       this.listaProdutos = retorno as Produto[];
       console.log(this.listaProdutos);
-      this.Produto = undefined;
+      this.produto = undefined;
     });
   }
 
   buscarPorID(){
-    this.userService.getOne(this.id).subscribe(retorno =>{
+    this.prodService.getOne(this.id).subscribe(retorno =>{
       console.log(retorno);
-      this.Produto = retorno as Produto;
+      this.produto = retorno as Produto;
       this.listaProdutos = [];
     });
   }
 
   ngOnInit(): void {
-    this.buscarprodutos();
+    this.buscarProdutos();
   }
 
 

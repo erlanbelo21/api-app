@@ -1,7 +1,7 @@
-import { Produto } from './../Models/Produto.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { EMPTY, Observable, catchError, map } from 'rxjs';
+import { Produto } from '../Models/Produto.model';
 
 
 @Injectable({
@@ -10,7 +10,7 @@ import { EMPTY, Observable, catchError, map } from 'rxjs';
 export class ProdutoService {
 
   //Criar a variavel com a URL da API
-  private url = 'http://localhost:3000/Produtos';
+  private url = 'http://localhost:3000/produtos';
 
   //Criar uma lista da classe de Usuários
   public listaProdutos: Produto[] = [];
@@ -47,11 +47,11 @@ export class ProdutoService {
     alert("A operação não pode ser concluida!");
     return EMPTY;
   }
-  salvar(Produto:Produto){
-    return this.http.post<Produto>(this.url, Produto).pipe(
+
+  salvar(produto: Produto): Observable<Produto> {
+    return this.http.post<Produto>(this.url, produto).pipe(
       map(retorno => retorno),
       catchError(erro => this.exibirErro(erro))
-    );;
-
+    );
   }
 }

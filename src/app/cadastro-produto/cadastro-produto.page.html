@@ -1,29 +1,32 @@
 <ion-header [translucent]="true">
-  <ion-toolbar  color="dark">
-    <ion-title >Cadastro de Produto</ion-title>
+  <ion-toolbar color="dark">
+    <ion-title>Cadastro Produto</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+
   <ion-item>
-    <ion-label position="stacked">Nome do Produto</ion-label>
-    <ion-input [(ngModel)]="Produto.nome" type="text"></ion-input>
+    <ion-input [(ngModel)]="produto.nome"
+    label="Nome" labelPlacement="floating" placeholder="Digite o nome do produto"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label position="stacked">Descrição</ion-label>
-    <ion-input [(ngModel)]="Produto.descricao" type="text"></ion-input>
+    <ion-input [(ngModel)]="produto.descricao"
+    label="Descrição" labelPlacement="floating" placeholder="Digite a descrição do produto"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label position="stacked">Validade</ion-label>
-    <ion-input [(ngModel)]="Produto.validade" type="text"></ion-input>
+    <ion-input [(ngModel)]="produto.validade"
+    label="Validade" labelPlacement="floating" placeholder="Digite a validade do produto"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label position="stacked">Preço</ion-label>
-    <ion-input [(ngModel)]="Produto.preco" type="number"></ion-input>
+    <ion-input [(ngModel)]="produto.preco"
+    label="Preço" type="number" labelPlacement="floating" placeholder="Digite o preço do produto"></ion-input>
   </ion-item>
- <ion-button expand="full" (click)="salvarProduto()" color="success">Salvar Produto </ion-button>
- <ion-button routerLink="/" expand="full" fill="clear" color="dark">VOLTAR</ion-button>
+
+  <ion-button (click)="salvarProduto()" expand="full" color="success">SALVAR</ion-button>
+  <ion-button routerLink="/" expand="full" color="success">VOLTAR</ion-button>
+
 </ion-content>

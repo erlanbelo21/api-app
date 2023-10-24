@@ -7,49 +7,48 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-item>
-    <ion-input label="Digite um ID:" [(ngModel)]="id"></ion-input>
-  </ion-item>
 
+  <ion-item>
+    <ion-input label="Digite um ID:" [(ngModel)] = "id"></ion-input>
+  </ion-item>
   <ion-button expand="block" (click)="buscarPorID()">
-    Buscar por ID
+    Buscar produto por ID
   </ion-button>
 
-  <ion-button expand="block" (click)="buscarprodutos()">
+  <ion-button expand="block" (click)="buscarProdutos()">
     Limpar Filtro
   </ion-button>
 
-  <div *ngIf="Produto">
-    <h2 style="color: blue">Resultado da Busca:</h2>
-    <ion-item>
-      <ion-badge slot="start">{{Produto.id}}</ion-badge>
-      <ion-label>
-        <h3>{{Produto.nome}}</h3>
-        <p>{{Produto.descricao}}</p>
-        <p>{{Produto.validade}}</p>
-        <p>{{Produto.preco}}</p>
-      </ion-label>
-    </ion-item>
-  </div>
-
-  <ion-item *ngFor="let user of listaProdutos">
-    <ion-badge slot="start">{{user.id}}</ion-badge>
+  <div *ngIf="produto">
+  <h2 style="color:blue">Resultado da Busca:</h2>
+  <ion-item>
+    <ion-badge slot="start">{{produto.id}}</ion-badge>
     <ion-label>
-      <h3><a>Nome:</a> {{user.nome}}</h3>
-      <p><a>Descrição:</a>{{user.descricao}}</p>
-      <p><a>Validade:</a>{{user.validade}}</p>
-      <p><a>Preço:</a>R${{user.preco}}</p>
+      <h3>{{produto.nome}}</h3>
+      <p>{{produto.descricao}}</p>
+      <p>R${{produto.preco}}</p>
+      <p>{{produto.validade}}</p>
     </ion-label>
   </ion-item>
+</div>
 
-  <ion-fab slot="fixed" horizontal="end" vertical="bottom">
-    <ion-fab-button routerLink="/cadastro-produto">
-      <ion-icon name="add"></ion-icon>
-    </ion-fab-button>
-  </ion-fab>
+
+
+<ion-item *ngFor="let prod of listaProdutos">
+  <ion-badge slot="start">{{prod.id}}</ion-badge>
+  <ion-label>
+    <h3><strong>Nome:</strong> {{prod.nome}}</h3>
+    <h3><strong>Descrição:</strong> {{prod.descricao}}</h3>
+    <h3><strong>Preço: R$ </strong>{{prod.preco}}</h3>
+    <h3><strong>Validade: </strong>{{prod.validade}}</h3>
+  </ion-label>
+</ion-item>
+
+
+<ion-fab slot="fixed" horizontal="end" vertical="bottom">
+  <ion-fab-button routerLink="/cadastro-produto">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>
+
 </ion-content>
-
-
-
-
-

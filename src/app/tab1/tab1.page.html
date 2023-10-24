@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="dark">
     <ion-title>
-    Usuarios
+      Usuário
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -29,22 +29,21 @@
       <p>{{usuario.email}}</p>
     </ion-label>
   </ion-item>
-  <ion-item-options>
-      <ion-item-option color="warning">
-<ion-icon slot="icon-only" name="create-outline"></ion-icon>
-      </ion-item-option>
-      <ion-item-option color="danger">
-        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
-      </ion-item-option>
-    </ion-item-options>
-    </ion-item-sliding>
 
-  
+  <ion-item-options>
+    <ion-item-option color="warning">
+      <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+    </ion-item-option>
+    <ion-item-option color="danger">
+    <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+    </ion-item-option>
+  </ion-item-options>
+</ion-item-sliding>
 </div>
 
 
 
-   <ion-item-sliding *ngFor="let user of listaUsuarios">
+<ion-item-sliding  *ngFor="let user of listaUsuarios">
 <ion-item>
   <ion-badge slot="start">{{user.id}}</ion-badge>
   <ion-label>
@@ -53,15 +52,14 @@
   </ion-label>
 </ion-item>
 
-
- <ion-item-options>
-      <ion-item-option color="warning" [routerLink]="'/alterar-usuario/' + user.id">
-<ion-icon slot="icon-only" name="create-outline"></ion-icon>
-      </ion-item-option>
-      <ion-item-option color="danger">
-        <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
-      </ion-item-option>
-    </ion-item-options>
+<ion-item-options>
+    <ion-item-option color="warning" [routerLink]="'/alterar-usuario/' + user.id">
+      <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+    </ion-item-option>
+    <ion-item-option color="danger">
+    <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+    </ion-item-option>
+</ion-item-options>
 </ion-item-sliding>
 
 
